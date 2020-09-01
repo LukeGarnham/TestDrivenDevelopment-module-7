@@ -1,15 +1,28 @@
-describe("whatCanIDrink", function() {
+describe("fizzBuzz", function() {
 
     beforeEach(function() {
-        drink = new whatCanIDrink();
+        test = new fizzBuzz();
     });
     
-    describe("Drink test", function() {
-        it("should return Sorry message", function() {
-            expect(whatCanIDrink(-1000)).toBe("Drink Toddy");
-        })
-        it("should return Drink Toddy", function() {
-            expect(whatCanIDrink(5.5)).toBe("Drink Toddy");
-        })
+    describe("FizzBuzz test", function() {
+        it("FizzBuzz function does exist", function() {
+            expect(fizzBuzz).toBeDefined();
+        });
+        it("not a number should return Error!", function() {
+            expect(fizzBuzz("notNumber")).toBe("Error!");
+        });
+        it("multiple of 3 and 5 should return FizzBuzz", function() {
+            expect(fizzBuzz(15)).toBe("FizzBuzz");
+        });
+        it("multiple of 3 should return Fizz", function() {
+            expect(fizzBuzz(3)).toBe("Fizz");
+        });
+        it("multiple of 5 should return Buzz", function() {
+            expect(fizzBuzz(5)).toBe("Buzz");
+        });
+        it("non-mulitple of 3 or 5 should return num", function() {
+            let test = fizzBuzz(4);
+            expect(test).toBe(4);
+        });
     });
 });
